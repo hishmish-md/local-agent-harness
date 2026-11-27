@@ -1,3 +1,5 @@
 # isolation
 
-Accountable seat: Owner / Neon Extra High. First deliverable and dependency: [handoff](../../handoffs/02-own-neon.md). Keep lane code, tests and evidence here; avoid secrets, weights, recordings and generated binaries in Git.
+Owner Gemini Neon High owns `O-NEON-01`: see the [handoff](../../handoffs/02-own-neon.md). Astra reviews denial and host non-interference.
+
+Keep ticket code, synthetic fixtures and evidence here. Do not commit secrets, model weights, recordings or generated binaries.

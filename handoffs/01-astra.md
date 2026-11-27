@@ -1,7 +1,5 @@
-# Owner / Astra
+# Owner / Astra — main coordinator
 
-Provisional lane: `workstreams/integration/`. Start with the common calibration in COORDINATION.md, then: Freeze v1 observation, action, consent, skill and policy contracts. Provide one valid and one rejected synthetic message per schema. Integrate only after each consumer passes contract tests.
+**First ticket:** `O-ASTRA-01` · `workstreams/integration/`. Hand off versioned observation, action, consent, skill and policy contracts to the other three seats locally. Supply a valid and a rejected synthetic message for each schema. Acceptance: contract fixtures produce the expected decisions, and each affected consumer can reproduce its check. Friend Sol independently reviews the employee-facing interface. Do not approve your own changes.
 
-Dependency and review: All peers consume versioned schemas; friend Sol reviews interface usability.
-
-Deliver a patch, synthetic fixture, exact reproduction command, observed results and remaining risks. Stay inside the lane; propose shared changes to Astra. No publishing, real data, extra agents or nested delegation.
+Acknowledge claims before editing, queue follow-ups, and integrate reviewed patches. For breaking changes, get producer and consumer signoff. Send the baseline, patch, command, observed results and risks using the [operating agreement](../COORDINATION.md). No remote publication is part of this ticket.

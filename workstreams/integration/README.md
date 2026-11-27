@@ -1,3 +1,5 @@
 # integration
 
-Accountable seat: Owner / Astra. First deliverable and dependency: [handoff](../../handoffs/01-astra.md). Keep lane code, tests and evidence here; avoid secrets, weights, recordings and generated binaries in Git.
+Owner Astra owns `O-ASTRA-01`: see the [handoff](../../handoffs/01-astra.md). Friend Sol reviews the employee-facing contract.
+
+Keep ticket code, synthetic fixtures and evidence here. Do not commit secrets, model weights, recordings or generated binaries.

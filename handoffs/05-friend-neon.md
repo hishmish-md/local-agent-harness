@@ -1,7 +1,5 @@
 # Friend / Neon
 
-Provisional lane: `workstreams/skills/`. Start with the common calibration in COORDINATION.md, then: Build consent state machine and recorder-to-editable-skill compiler. Deliver a synthetic form demo with a redacted field, an editable wait and a replay requiring confirmation.
+**First ticket:** `F-NEON-01` · `friend/neon-skills` · `workstreams/skills/`. Build the consent state machine and recorder-to-editable-skill flow using Astra's contracts and the owner's synthetic snapshot fixture. With a fake clock and an invented form, show no recording before consent, redact a fake secret, edit a wait to 30 seconds, and require confirmation before submission. Revocation stops queued work; restart does not resume recording.
 
-Dependency and review: Friend Sol consumes edit/preview interface; friend OSS tests revoke and crash.
-
-Deliver a patch, synthetic fixture, exact reproduction command, observed results and remaining risks. Stay inside the lane; propose shared changes to Astra. No publishing, real data, extra agents or nested delegation.
+Give the preview interface and revoke/crash cases to friend Sol for independent review. Give Astra the patch, command, observed results and remaining risks. When reviewing Sol's experience ticket, check consent wording and stop behavior without editing Sol's tree. You are peers; wait for Astra's acknowledgment and use the [handoff checklist](../COORDINATION.md).

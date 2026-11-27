@@ -1,3 +1,5 @@
 # qualification
 
-Accountable seat: Friend / separate Colab gpt-oss-120b. First deliverable and dependency: [handoff](../../handoffs/06-friend-oss.md). Keep lane code, tests and evidence here; avoid secrets, weights, recordings and generated binaries in Git.
+Friend Sol 6.2 medium owns `F-SOL-02`: see the [handoff](../../handoffs/04-friend-sol.md). Follow-up after experience handoff. Friend Neon reviews oracles and independently runs gates on Sol’s product code. Astra reviews Sol’s checks on friend Neon’s code.
+
+Keep ticket code, synthetic fixtures and evidence here. Do not commit secrets, model weights, recordings or generated binaries.

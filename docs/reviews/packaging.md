@@ -5,9 +5,9 @@
 ## Offline installation
 
 - List host prerequisites separately from bundled files. Include the installer, runtime, dependencies, local assets, and operator instructions needed for the advertised offline features. Identify optional model packs by version and digest; do not silently download a missing pack.
-- Start with a clean supported host, empty caches, and only the declared prerequisites. Block external network access before copying the candidate from removable media. Keep local loopback available.
+- Start with a clean supported host, empty caches, and only the declared prerequisites. Block external network access before copying the candidate from removable media. Trace socket and DNS attempts, including loopback; local IPC uses OS pipes.
 - Follow the shipped instructions: verify the bundle, install, start the harness, and complete one representative local task with the advertised offline configuration. Restart and repeat. Remove one required asset in a separate test: installation or startup must name the missing item without trying an online fallback.
-- **Pass:** both runs return the expected result with no external connection attempts. Attach the prerequisite inventory, task input and expected output, installer logs, and network observations.
+- **Pass:** both runs return the expected result with zero product or child-process network attempts, including loopback. Attach the prerequisite inventory, task input and expected output, installer logs, and network observations.
 
 ## Signed bundles
 

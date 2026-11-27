@@ -1,5 +1,7 @@
 # Single-GPU Colab: gpt-oss for agent tool calls
 
+> **Historical only.** Superseded by the four-seat plan; not an assignment or setup step. See the [archive index](../HISTORICAL.md).
+
 **Pick `openai/gpt-oss-120b` at `b5c939de8f754692c1647ca79fbf85e8c1e70f8a`, native MXFP4 safetensors.** The pinned config declares MXFP4 expert weights; the shard index reports 65,248,815,744 tensor bytes, not total runtime VRAM.[1] Start here rather than adding a second quantization: OpenAI evaluated this model on tool use and reports single-80-GB operation.[5]
 
 **Check the assigned GPU, not just the Colab tier.** Prefer H100 80 GB; vLLM marks H100 verified. Its recipe also gives an A100 80 GB command but lists a 96 GB minimum elsewhere, so treat A100 as conditional. A 96 GB card still needs a supported kernel.[2] Check `nvidia-smi` and `df -h` before downloading; don't reserve a paid runtime just to check. Start with one request and 8K total context to leave room for the KV cache. Suggested launch on an already-provisioned Linux GPU runtime with compatible vLLM installed (not executed here):

@@ -1,5 +1,7 @@
 # One supervised Hermes tool call inside the notebook
 
+> **Historical only.** Superseded by the four-seat plan; not an assignment or setup step. See the [archive index](../docs/HISTORICAL.md).
+
 `hermes_colab.py` runs **one fixed synthetic exercise**, from a notebook cell, using the same pinned Hermes `AIAgent` engine as the local worker. It does not clone the desktop identity, prompt files, credentials, tools, projects or history. It starts a temporary authenticated vLLM listener only on runtime loopback, runs one local client, and stops both. There is no external worker queue or route from Windows. Do **not** run the older `gpt-oss-120b.ipynb` first: that is a separate 8,192-token API demo with different storage requirements.
 
 ## Before running any cells

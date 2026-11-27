@@ -1,3 +1,5 @@
 # skills
 
-Accountable seat: Friend / Neon. First deliverable and dependency: [handoff](../../handoffs/05-friend-neon.md). Keep lane code, tests and evidence here; avoid secrets, weights, recordings and generated binaries in Git.
+Friend Neon owns `F-NEON-01`: see the [handoff](../../handoffs/05-friend-neon.md). Friend Sol reviews the preview and independently exercises revoke/crash.
+
+Keep ticket code, synthetic fixtures and evidence here. Do not commit secrets, model weights, recordings or generated binaries.

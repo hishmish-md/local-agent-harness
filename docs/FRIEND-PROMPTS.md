@@ -1,43 +1,23 @@
-# Your first 15 minutes: one PC, three agents
+# Friend tickets: Sol and Neon
 
-**Already using Hermes?** Paste the [single PC setup prompt](FRIEND-HERMES.md) instead of doing the Git steps below.
+Use the [one-paste Hermes setup](FRIEND-HERMES.md) by default. It prepares **both** claims. The rest of this page is an alternative for someone who chooses manual setup; it is not an additional onboarding step.
 
-Your job is to open three separate chats, give each one its prompt below, and send their replies to Astra (the project coordinator). You do not need to build the harness or manage your friend's PC. The models do not automatically see each other's chats.
+## Manual checkout (optional)
 
-## 1. Connect your PC once
+1. Clone `https://github.com/hishmish-md/local-agent-harness.git` into an unused directory, or reuse your own checkout after checking `git remote get-url origin`. Stop on a mismatch. Use your own account, not a fork.
+2. In Git Bash, run `git fetch origin`, then `BASE=$(git rev-parse origin/main)` and `git show "$BASE:COORDINATION.md"`. Continue only if this is the four-seat agreement. Inspect `git worktree list --porcelain`, `git branch --list` and the intended sibling paths. Reuse a clean match on the expected branch and SHA. A clean matching tree that is strictly behind may fast-forward: inside it verify `git merge-base --is-ancestor HEAD "$BASE"` succeeds, then run `git merge --ff-only "$BASE"`. Preserve and report any ahead, diverged, dirty or conflicting tree; do not move or delete it.
+3. Run the corresponding line **only for a missing seat whose branch and path are both unused**. No other tree is needed.
 
-1. Sign in to GitHub Desktop with **your own GitHub account**. Choose **File → Clone repository → URL**, enter `https://github.com/hishmish-md/local-agent-harness.git`, choose a local folder and click **Clone**. Do not fork. If already cloned, use **Fetch origin** instead.
-2. From the clone, open Git Bash and run the four commands below. Use the printed commit as `BASE` in each prompt. The new folders are separate checkouts of the same repo, so one agent cannot accidentally switch another's branch. Run the three `worktree add` commands once, not before every session.
+   ```bash
+   git worktree add -b friend/sol-experience ../harness-sol "$BASE"
+   git worktree add -b friend/neon-skills ../harness-neon "$BASE"
+   ```
 
-```bash
-git fetch origin && git rev-parse origin/main
-git worktree add -b friend/sol-experience ../harness-sol origin/main
-git worktree add -b friend/neon-skills ../harness-neon origin/main
-git worktree add -b friend/oss-qualification ../harness-oss origin/main
-```
+4. In each tree verify `git rev-parse --show-toplevel`, `git branch --show-current`, `git rev-parse HEAD` and `git status --short`. A successful checkout proves neither model availability nor collaborator write access. No model check-in or runtime change is needed to prepare claims.
 
-3. Open `harness-sol` in Sol and `harness-neon` in Neon. For GPT-OSS, use **your own** GPU/runtime and account; a hosted model cannot see your PC folders automatically. If using Colab without a connected coding worker, paste the public repo URL and BASE, supply only public repo text or synthetic fixtures, then review and apply its patch yourself in `harness-oss`. Never upload your home directory or mount a private Drive. If a model cannot access the repo, it should say so, not invent file contents.
-4. Paste one block into each matching chat, replacing `BASE` with the hash. Send the three claim replies to Astra in the owner's chat for acknowledgment. **You can do this part now with read access.** If you need to push later, give the owner your GitHub username so they can invite you; accept the invitation using your own account. No one needs your password or token.
+## First-ticket briefs
 
-## 2. Copy one prompt per model
+- **Sol — `F-SOL-01`**: Work only in `workstreams/experience/`. Use a fake adapter to show status, clarification, pause and stop. Show that an employee cannot enable admin observation. Friend Neon reviews consent/stop behavior; owner Gemini Neon High reviews the observer boundary. [Full handoff](../handoffs/04-friend-sol.md).
+- **Friend Neon — `F-NEON-01`**: Work only in `workstreams/skills/`. Build a synthetic consent-to-replay fixture with redaction, an editable wait, submit confirmation and no action after revocation. Friend Sol reviews the preview and independently tests revoke/crash. [Full handoff](../handoffs/05-friend-neon.md).
 
-### Sol 6.2, medium reasoning → employee experience
-```text
-You are the Sol peer on hishmish-md/local-agent-harness, baseline BASE, ticket F-SOL-01. Read COORDINATION.md, handoffs/04-friend-sol.md and workstreams/experience/README.md. You own only workstreams/experience/. First reply with your model setting, actual baseline, writable path, dependency, reviewer, and acceptance check. Wait for Astra's acknowledgment and calibration before implementation. Then build the smallest local employee status/clarification/pause-stop flow using a fake adapter, separate from admin controls. Test that an employee cannot enable admin observation. Ask friend Neon to review consent wording and owner-side Neon to review isolation; coordinate through the human or ticket, not by spawning them. Use invented data only. Report changed files, exact test command, expected vs actual, and blockers. No network calls in the product, no push, no merge, no extra agents.
-```
-
-### Neon → recording and editable skills
-```text
-You are the friend-side Neon peer on hishmish-md/local-agent-harness, baseline BASE, ticket F-NEON-01. Read COORDINATION.md, handoffs/05-friend-neon.md and workstreams/skills/README.md. You own only workstreams/skills/. First reply with your actual model setting, baseline, writable path, dependency, reviewer and acceptance check. Wait for Astra's acknowledgment and calibration before implementation. Then build a synthetic consent-to-replay fixture: no recording before consent, redact one fake secret field, allow editing a wait to 30 seconds, require confirmation before submission, and stop on revocation. Use a fake clock, not a real employee recording. Give Sol the preview interface and friend GPT-OSS the revoke case for independent review. Report changed files, exact test command, expected vs actual, and blockers. No Hydrogen children on this seat, network calls in the product, pushes or merges.
-```
-
-### GPT-OSS-120B → independent tests
-```text
-You are the independent qualification peer on hishmish-md/local-agent-harness, baseline BASE, ticket F-OSS-01. Read COORDINATION.md, handoffs/06-friend-oss.md and workstreams/qualification/README.md. You own only workstreams/qualification/. First reply with actual model/runtime, baseline, writable path, dependency, reviewer and acceptance check; if files or tools are inaccessible, say exactly what you need. Wait for Astra's acknowledgment and calibration before implementation. Then design independent synthetic tests for a delayed button, two controls with identical names, and consent revoked during a wait. Define expected outcomes before reading implementation results. Require no action on ambiguity or after revocation. Report fixture seed, command, expected vs observed and blockers to Astra and the affected peer. Colab tests do not prove Windows isolation. If you cannot run a test, mark NOT RUN. No private data, nested agents, pushes or merges.
-```
-
-## 3. What to send back
-
-Paste this for each seat: `ticket | seat/model | baseline | branch/path | reviewer | acceptance check | ready or blocked`. Astra will reconcile overlaps. If calibration fixtures or a reviewer aren't available, request them; do not self-certify. For handoff after work, include commit or patch, test command, actual output and risk. Do not edit outside the assigned folder; ask Astra for shared interface changes. No one pushes to main. After owner authorization and a collaborator invitation, the human can push only the reviewed ticket branch and open a pull request against main. A second person reproduces the test before integration.
-
-Full rules: [coordination](../COORDINATION.md) · [seat guide](FRIEND-START.md) · [release gates](../README.md). GitHub and Colab are development tools only; the shipped harness must work offline.
+Send Astra one report with both claims: `ticket | seat | upstream/BASE | branch/root/HEAD/state | model evidence or unverified | paths | dependency | reviewer | acceptance check`. Wait for acknowledgment before editing. Neither peer dispatches the other. Keep local patches and reviews local; no push, PR or merge during setup. For later work, follow the [operating agreement](../COORDINATION.md).

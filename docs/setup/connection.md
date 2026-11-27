@@ -1,5 +1,7 @@
 # Connecting Windows Hermes to a notebook
 
+> **Historical only.** Superseded by the four-seat plan; not an assignment or setup step. See the [archive index](../HISTORICAL.md).
+
 **Decision: keep the service local if Hermes needs a private HTTP endpoint.** A hosted Colab notebook and your Windows PC are separate machines. `127.0.0.1` in a notebook cell reaches the Colab VM; the same address in Windows Hermes reaches Windows. A successful request inside the notebook proves only the first path works. Neither a private notebook sharing link nor an API token changes routing. Leave the hosted notebook out of Hermes's provider configuration.
 
 | Goal | No-purchase option | Limit |

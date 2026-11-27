@@ -1,3 +1,5 @@
 # experience
 
-Accountable seat: Friend / Sol 6.2 medium. First deliverable and dependency: [handoff](../../handoffs/04-friend-sol.md). Keep lane code, tests and evidence here; avoid secrets, weights, recordings and generated binaries in Git.
+Friend Sol 6.2 medium owns `F-SOL-01`: see the [handoff](../../handoffs/04-friend-sol.md). Friend Neon reviews consent and stop; owner Gemini Neon High checks observer isolation.
+
+Keep ticket code, synthetic fixtures and evidence here. Do not commit secrets, model weights, recordings or generated binaries.

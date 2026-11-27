@@ -1,3 +1,5 @@
 # inference
 
-Accountable seat: Owner / Colab gpt-oss-120b. First deliverable and dependency: [handoff](../../handoffs/03-own-oss.md). Keep lane code, tests and evidence here; avoid secrets, weights, recordings and generated binaries in Git.
+Owner Gemini Neon High owns `O-NEON-02`: see the [handoff](../../handoffs/02-own-neon.md). Follow-up after isolation handoff. Astra reviews the runtime contract; friend Sol reproduces on the reference PC.
+
+Keep ticket code, synthetic fixtures and evidence here. Do not commit secrets, model weights, recordings or generated binaries.
