@@ -1,0 +1,22 @@
+{
+  "A": {
+    "repair": null,
+    "changes": null,
+    "wait_logic": null,
+    "ready_trace": null,
+    "timeout_trace": null,
+    "consent_review": null,
+    "regression_checks": null,
+    "gate_evidence": null
+  },
+  "B": {
+    "repair": null,
+    "changes": null,
+    "wait_logic": null,
+    "ready_trace": null,
+    "timeout_trace": null,
+    "consent_review": null,
+    "regression_checks": null,
+    "gate_evidence": null
+  }
+}

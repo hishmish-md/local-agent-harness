@@ -1,0 +1,14 @@
+{
+  "mask": "A",
+  "draft": {
+    "id": "card-A",
+    "count": "4",
+    "label": "tile-A"
+  },
+  "source": {
+    "count": 4
+  },
+  "ready_tick": 3,
+  "deadline": 6,
+  "review_only": "if state != denied: emit(card)"
+}

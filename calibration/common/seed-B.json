@@ -1,0 +1,14 @@
+{
+  "mask": "B",
+  "draft": {
+    "id": "card-B",
+    "count": "9",
+    "label": "tile-B"
+  },
+  "source": {
+    "count": 9
+  },
+  "ready_tick": 5,
+  "deadline": 8,
+  "review_only": "emit(card); if state != granted: return blocked"
+}
