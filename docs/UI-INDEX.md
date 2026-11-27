@@ -1,4 +1,6 @@
-# Dark UI prototypes
+# Desktop UI concepts
+
+Compare the dark boards below with [Run ledger](../design/variant-b/index.html), an offline, interactive second concept. Open the HTML from your clone to try recording, edit a wait, resolve an ambiguous target, or stop during playback. Use the [reference checklist](../design/variant-b/REVIEW.md) to compare both designs; neither is the production application.
 
 Open the [preview](../design/prototypes/preview.html) locally with the three SVGs beside it. On GitHub, open a board directly:
 
