@@ -1,6 +1,6 @@
 # Coordination review: six workers, one repository
 
-Astra, owner Neon, owner OSS, friend Sol, friend Neon and friend OSS are the six development seats. Astra is both a worker and the integration owner, not a seventh seat. Astra schedules the two other owner-side seats. The three friend-side seats accept or decline work as peers. No orchestrator, dispatcher or remote-control service runs on the friend’s machine.
+Astra, owner Neon Extra High, owner OSS, friend Sol, friend Neon and friend OSS are the six seats that may own development tickets. Astra is both a worker and the integration owner, not a seventh seat. Astra schedules the two other owner-side seats. If Neon Extra High delegates a bounded task to Hydrogen, Neon reviews the result and reports it to Astra; Hydrogen claims no separate ticket, branch or lane. The three friend-side seats accept or decline work as peers. No orchestrator, dispatcher or remote-control service runs on the friend’s machine.
 
 ## Claim before editing
 
