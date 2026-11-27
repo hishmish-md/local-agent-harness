@@ -85,3 +85,13 @@ workstreams/skills/
 - **Phased Route:**
   - **Phase 5 (Exporter Phase 0) — Receipt & Plan Gate:** Confirm receipt on issue #1, inspect existing `compiler.py`/`preview.py`, append plan & checkpoint to `BUILD_PLAN.md` and `PROGRESS.md`. Skills: `none`. Checks: line counts <= 220, `git status` clean outside `workstreams/skills/`.
   - **Phase 6 (Exporter Phase 1) — Offline Edited-Skill Exporter Implementation:** Implement `workstreams/skills/src/exporter.py` (offline JSON export with redacted placeholders, synthetic-only input, zero recording/replay/network imports). Skills: `boundary-parsing-strict-types`, `invariant-contract-planning`. Checks: `python -B -m py_compile workstreams/skills/src/exporter.py`, static import/network scan, `wc -l <= 220`, `git status` clean outside `workstreams/skills/`. (Testing/review/signoff owned by Astra.)
+
+## Milestone Clarification v1: F-NEON-01 / edited-skill-exporter (source 7221971766)
+- **Source:** Issue #1 comment `IC_kwDOV-GZWM8AAAABro_cXw` (reconciles existing commit `bdf259c` to Astra's v1 format contract; exporter only, NO importer).
+- **Artifacts:**
+  - `workstreams/skills/edited_skill_v1.md`: v1 format contract (`format="edited-skill"`, `version=1`, `wait` 0..60000 ms, `set_field` typed slot placeholders 1..64, bounds, rejection rules, API).
+  - `workstreams/skills/fixtures/edited_skill_v1.json`: minimal redacted expected v1 fixture.
+  - `workstreams/skills/edited_skill_export.py`: offline v1 exporter + `--demo` CLI entry point (validated before emission, generic error with no value echo, <= 64 KiB UTF-8, deterministic JSON).
+- **Phased Route:**
+  - **Phase 7 (Clarification v1 — Define Contract & Fixture):** Author `edited_skill_v1.md` and `fixtures/edited_skill_v1.json`; reconcile `DeclarativeSkill` mapping (reject unsupported ops/units rather than dropping). Skills: `none`. Checks: `python -m json.tool workstreams/skills/fixtures/edited_skill_v1.json`, `wc -l <= 220`, `git status` clean outside `workstreams/skills/`.
+  - **Phase 8 (Clarification v1 — Implement Exporter & Local Handoff):** Implement `workstreams/skills/edited_skill_export.py` (<= 220 lines; split validator helper if needed), run `py_compile`, static network/import scan, `--demo` stdout check against fixture (without committing generated sample), commit locally, and prepare patch digest for private relay. Skills: `boundary-parsing-strict-types`, `invariant-contract-planning`. (Testing, review, verification, and signoff remain owned by Astra.)

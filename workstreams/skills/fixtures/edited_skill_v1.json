@@ -1,0 +1,21 @@
+{
+  "format": "edited-skill",
+  "steps": [
+    {
+      "op": "set_field",
+      "target": {
+        "slot": 1,
+        "type": "field"
+      },
+      "value": {
+        "slot": 2,
+        "type": "text"
+      }
+    },
+    {
+      "ms": 500,
+      "op": "wait"
+    }
+  ],
+  "version": 1
+}

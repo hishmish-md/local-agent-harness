@@ -64,5 +64,14 @@ Friend-side Neon peer (`F-NEON-01`) on `hishmish-md/local-agent-harness` (baseli
   - Created `workstreams/skills/src/exporter.py` (offline `skill.export.v1` exporter for already-edited synthetic skills, enforces `[REDACTED]` placeholders on sensitive/redacted fields, canonical JSON serializer, atomic local writer, and `build_synthetic_edited_skill()` without recording/replay/network).
   - Checks: `python -B -m py_compile workstreams/skills/src/exporter.py`, static import/network scan, `wc -l <= 220`, `git status` clean outside `workstreams/skills/`. Testing, review, verification, and signoff remain owned by Astra (NOT RUN here).
 
+- **Phase 7 (Clarification v1 — Define Contract & Fixture)** (COMPLETE)
+  - Reconciled `F-NEON-01 / edited-skill-exporter` with Astra's Milestone clarification v1 (`IC_kwDOV-GZWM8AAAABro_cXw`, source `7221971766`; exporter only, no importer).
+  - Created `workstreams/skills/edited_skill_v1.md` and `workstreams/skills/fixtures/edited_skill_v1.json`; updated `BUILD_PLAN.md` with Phases 7–8.
+  - Checks: `python -m json.tool workstreams/skills/fixtures/edited_skill_v1.json`, `wc -l <= 220`, `git status` clean outside `workstreams/skills/`.
+
+- **Phase 8 (Clarification v1 — Implement Exporter & Local Handoff)** (COMPLETE)
+  - Implemented `workstreams/skills/edited_skill_export.py` (offline v1 exporter + `--demo` CLI, strict pre-emission validation for envelope/ops/slots/depth/token length/64 KiB cap, generic error with no value echo, zero recording/replay/importer/network/shell/telemetry).
+  - Checks: `py_compile`, static import/network scan, `--demo` stdout byte-identical to `workstreams/skills/fixtures/edited_skill_v1.json`, `wc -l <= 220`, clean local commit + patch digest on `friend/neon-skills` (testing/review/verification/signoff remain owned by Astra).
+
 ## Next Phase
-- None — complete (local implementation of `F-NEON-01 / edited-skill-exporter` ready for Astra verification/signoff; nothing pushed).
+- None — complete (F-NEON-01 / edited-skill-exporter v1 contract, fixture, exporter, and local patch ready for Astra verification and signoff; nothing pushed).
