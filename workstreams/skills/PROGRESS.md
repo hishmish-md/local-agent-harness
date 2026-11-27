@@ -55,5 +55,14 @@ Friend-side Neon peer (`F-NEON-01`) on `hishmish-md/local-agent-harness` (baseli
 - **NOTE (External Gate):** Independent peer review (Friend Sol / Friend GPT-OSS) and Astra acknowledgment are **NOT RUN** (no push, merge, or self-certification).
 - **NOTE (Upstream moved):** `origin/main` is at `30d9cb1f2547b2a13d5c75de24dfe53f7aea0fde` (four-seat agreement); local branch `friend/neon-skills` remains at `d72ce46f98fba2681f96a0e3313b343e3be4e6b6` (not merged).
 
+## Follow-up Subtask: F-NEON-01 / edited-skill-exporter
+- **Phase 5 (Exporter Phase 0) — Receipt & Plan Gate** (COMPLETE)
+  - Posted receipt on issue #1: `@astra F-NEON-01 RECEIVED edited-skill-exporter` (`https://github.com/hishmish-md/local-agent-harness/issues/1#issuecomment-7222582609`).
+  - Inspected `compiler.py`, `preview.py`, and clean local HEAD `892ee52` on `friend/neon-skills`; appended exporter plan to `BUILD_PLAN.md`.
+  - Role note: Astra owns all tests, review, verification, and signoff; Neon scope is local implementation only (no recording, replay, network, or push).
+- **Phase 6 (Exporter Phase 1) — Offline Edited-Skill Exporter Implementation** (COMPLETE)
+  - Created `workstreams/skills/src/exporter.py` (offline `skill.export.v1` exporter for already-edited synthetic skills, enforces `[REDACTED]` placeholders on sensitive/redacted fields, canonical JSON serializer, atomic local writer, and `build_synthetic_edited_skill()` without recording/replay/network).
+  - Checks: `python -B -m py_compile workstreams/skills/src/exporter.py`, static import/network scan, `wc -l <= 220`, `git status` clean outside `workstreams/skills/`. Testing, review, verification, and signoff remain owned by Astra (NOT RUN here).
+
 ## Next Phase
-- None — complete (all local F-NEON-01 phases 0–4 verified; ready for human relay to Astra, Friend Sol, and Friend GPT-OSS).
+- None — complete (local implementation of `F-NEON-01 / edited-skill-exporter` ready for Astra verification/signoff; nothing pushed).

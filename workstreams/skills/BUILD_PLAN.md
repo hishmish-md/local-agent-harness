@@ -72,3 +72,16 @@ workstreams/skills/
   - Files: `workstreams/skills/tests/test_consent_recorder.py`, `workstreams/skills/tests/test_compiler_replay.py`
   - Skills: `edge-matrix-and-mutation-checks`
   - Checks: `pytest -v workstreams/skills/tests`; secret scan on `workstreams/skills/`; line counts <= 220.
+
+## Follow-up Subtask: F-NEON-01 / edited-skill-exporter
+- **Source:** Issue #1 comment `IC_kwDOV-GZWM8AAAABrnaLNg` (receipt confirmed at `issuecomment-7222582609`).
+- **Scope:** Local implementation only under `workstreams/skills/`. Build an offline exporter for an already-edited synthetic skill.
+- **Constraints:**
+  - Export redacted placeholders (`[REDACTED]`) instead of sensitive values.
+  - Synthetic inputs only; no recording, replay, or network access.
+  - Do not push. Astra owns all tests, review, verification, and signoff (do not add test suites or self-certify).
+- **Modular File Map (<= 180 lines target, 220 hard cap):**
+  - `workstreams/skills/src/exporter.py`: `EXPORT_SCHEMA_VERSION = "skill.export.v1"`, `ExportError`, `ExportedStep`, `ExportedSkill`, `export_edited_skill()`, `serialize_exported_skill()`, `write_exported_skill()`, and `build_synthetic_edited_skill()` (constructs an already-edited synthetic `DeclarativeSkill` directly without recording or replay).
+- **Phased Route:**
+  - **Phase 5 (Exporter Phase 0) — Receipt & Plan Gate:** Confirm receipt on issue #1, inspect existing `compiler.py`/`preview.py`, append plan & checkpoint to `BUILD_PLAN.md` and `PROGRESS.md`. Skills: `none`. Checks: line counts <= 220, `git status` clean outside `workstreams/skills/`.
+  - **Phase 6 (Exporter Phase 1) — Offline Edited-Skill Exporter Implementation:** Implement `workstreams/skills/src/exporter.py` (offline JSON export with redacted placeholders, synthetic-only input, zero recording/replay/network imports). Skills: `boundary-parsing-strict-types`, `invariant-contract-planning`. Checks: `python -B -m py_compile workstreams/skills/src/exporter.py`, static import/network scan, `wc -l <= 220`, `git status` clean outside `workstreams/skills/`. (Testing/review/signoff owned by Astra.)
