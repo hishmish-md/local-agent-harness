@@ -43,17 +43,44 @@ class ExperienceTests(unittest.TestCase):
         )
         self.assertEqual(self.call(self.employee, "status").state, "Completed")
 
-    def test_stop_drops_queue_and_cannot_resume(self):
+    def test_stop_drops_queue_and_requires_matching_adapter_ack(self):
         self.call(self.employee, "answer", "Maple")
         self.demo.tick()
         status = self.call(self.employee, "stop")
-        self.assertEqual((status.state, status.in_flight), ("Stopped", "Maple: open"))
+        self.assertEqual(
+            (status.state, status.in_flight), ("Stop requested", "Maple: open")
+        )
+        requested_run = self.demo.adapter.stop_requested_for
+        self.assertIsNotNone(requested_run)
         self.demo.tick()
         self.demo.tick()
-        self.assertEqual(self.call(self.employee, "status").state, "Stopped")
+        status = self.call(self.employee, "status")
+        self.assertEqual((status.state, status.in_flight), ("Stop requested", None))
+        self.demo.adapter_stop_acknowledged(object())
+        self.assertEqual(self.call(self.employee, "status").state, "Stop requested")
         with self.assertRaises(ValueError):
             self.call(self.employee, "resume")
+        self.demo.adapter_stop_acknowledged(requested_run)
+        self.assertEqual(self.call(self.employee, "status").state, "Stopped")
+        self.demo.tick()
         self.assertEqual(self.demo.adapter.dispatched, ["Maple: open"])
+
+    def test_disconnect_before_stop_ack_is_unconfirmed_until_matching_ack(self):
+        self.call(self.employee, "answer", "Cedar")
+        self.assertEqual(self.call(self.employee, "stop").state, "Stop requested")
+        requested_run = self.demo.adapter.stop_requested_for
+        self.demo.adapter.connected = False
+        self.demo.tick()
+        self.demo.adapter_stop_acknowledged(requested_run)
+        self.assertEqual(self.call(self.employee, "status").state, "Stop unconfirmed")
+        self.demo.adapter.connected = True
+        self.demo.tick()
+        self.demo.adapter_stop_acknowledged(object())
+        self.assertEqual(self.call(self.employee, "status").state, "Stop unconfirmed")
+        self.assertEqual(self.call(self.employee, "stop").state, "Stop unconfirmed")
+        self.demo.adapter_stop_acknowledged(requested_run)
+        self.assertEqual(self.call(self.employee, "status").state, "Stopped")
+        self.assertEqual(self.demo.adapter.dispatched, [])
 
     def test_employee_cannot_enable_observation_even_after_consent(self):
         self.call(self.employee, "grant-observation")

@@ -10,12 +10,20 @@ OBSERVATION_CONSENT = (
 )
 
 
+_STOP_PENDING = ("Stop requested", "Stop unconfirmed")
+
+
 class FakeAdapter:
     clarification = "Which fictional inbox: Cedar or Maple?"
 
     def __init__(self):
         self.connected = True
         self.dispatched: list[str] = []
+        self.stop_requested_for: object | None = None
+
+    def request_stop(self, run_id: object) -> None:
+        if self.connected:
+            self.stop_requested_for = run_id
 
     def actions_for(self, answer):
         if answer not in ("Cedar", "Maple"):
@@ -39,6 +47,7 @@ class Demo:
 
     def __init__(self):
         self.adapter = FakeAdapter()
+        self._run_id = object()
         self.employee_session = object()
         self.admin_session = object()
         self._state = "Awaiting clarification"
@@ -48,9 +57,18 @@ class Demo:
         self._consent = False
         self._observing = False
 
+    def _note_contact_loss(self):
+        if not self.adapter.connected and self._state in _STOP_PENDING:
+            self._state = "Stop unconfirmed"
+
     def _status(self):
+        self._note_contact_loss()
         state = self._state
-        if not self.adapter.connected and state not in ("Completed", "Stopped"):
+        if not self.adapter.connected and state not in (
+            "Completed",
+            "Stopped",
+            "Stop unconfirmed",
+        ):
             state = "Status unknown"
         return Status(state, self._clarification, self._in_flight, self._observing)
 
@@ -85,10 +103,11 @@ class Demo:
                 raise ValueError("Only a paused run can resume.")
             self._state = "Awaiting clarification" if self._clarification else "Running"
         elif operation == "stop":
-            if self._state != "Completed":
-                self._end("Stopped")
+            if self._state not in ("Completed", "Stopped", *_STOP_PENDING):
+                self._end("Stop requested")
+                self.adapter.request_stop(self._run_id)
         elif operation == "grant-observation":
-            if self._state in ("Completed", "Stopped"):
+            if self._state in ("Completed", "Stopped", *_STOP_PENDING):
                 raise ValueError("No active run to share.")
             self._consent = True
         elif operation == "revoke-observation":
@@ -110,10 +129,25 @@ class Demo:
             raise PermissionError("Admin operation not allowed.")
         return None
 
+    def adapter_stop_acknowledged(self, run_id: object | None) -> None:
+        """Handle an adapter event, not an employee or admin command."""
+        self._note_contact_loss()
+        if (
+            self.adapter.connected
+            and self._state in _STOP_PENDING
+            and run_id is self._run_id
+            and self.adapter.stop_requested_for is run_id
+        ):
+            self._in_flight = None
+            self._end("Stopped")
+
     def tick(self):
-        """Each fake adapter tick either settles a dispatch or starts one, never both."""
+        """A fake adapter tick never acknowledges a stop implicitly."""
         if not self.adapter.connected:
+            self._note_contact_loss()
             return
+        if self._state in _STOP_PENDING and self.adapter.stop_requested_for is None:
+            self.adapter.request_stop(self._run_id)
         if self._in_flight is not None:
             self._in_flight = None
             if self._state == "Pausing":
@@ -133,7 +167,8 @@ def main():
     session = demo.employee_session
     print(
         "Commands: status, answer Cedar, answer Maple, tick, pause, resume, stop, "
-        "observation-info, grant-observation, revoke-observation, quit"
+        "simulate-stop-ack (fake adapter), observation-info, "
+        "grant-observation, revoke-observation, quit"
     )
     while True:
         status = demo.employee_request(session, "status")
@@ -156,6 +191,8 @@ def main():
         try:
             if operation == "tick":
                 demo.tick()
+            elif operation == "simulate-stop-ack":
+                demo.adapter_stop_acknowledged(demo.adapter.stop_requested_for)
             elif operation == "observation-info":
                 print(OBSERVATION_CONSENT)
             else:
