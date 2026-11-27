@@ -71,6 +71,63 @@ class SelectionRunTests(unittest.TestCase):
                 self.assertEqual(run.acknowledge_stop(), decision)
                 self.assertEqual(run.events, ())
 
+    def test_stop_and_ack_from_clock_skip_dispatch_consent(self):
+        consent_ticks = []
+
+        def clock():
+            if self.tick == 13:
+                run.stop()
+                run.acknowledge_stop()
+            return self.tick
+
+        def consent():
+            consent_ticks.append(self.tick)
+            return True
+
+        run = validator.start_selection('select', ['fixture:button'], consent,
+                                        clock=clock, wait=3)
+        self.tick = 13
+        self.assertEqual(run.poll(), 'stopped')
+        self.assertEqual(consent_ticks, [10])  # Only the start check ran.
+        self.assertEqual(run.events, ())
+
+    def test_consent_extends_deadline_without_repeating_callbacks(self):
+        calls = []
+
+        def clock():
+            calls.append('clock')
+            return self.tick
+
+        def consent():
+            calls.append('consent')
+            if self.tick == 13:
+                run.edit_wait(5)
+            return True
+
+        run = validator.start_selection('select', ['fixture:button'], consent,
+                                        clock=clock, wait=3)
+        calls.clear()
+        self.tick = 13
+        self.assertEqual((run.poll(), run.events), ('waiting', ()))
+        self.assertEqual(calls, ['clock', 'consent'])
+        self.tick = 14
+        self.assertEqual((run.poll(), run.events), ('waiting', ()))
+        self.tick = 15
+        self.assertEqual(run.poll(), 'dispatched')
+        self.assertEqual(run.events, (('select', 'fixture:button'),))
+        self.assertEqual(calls, ['clock', 'consent', 'clock', 'clock', 'consent'])
+
+    def test_late_ack_only_confirms_the_original_handle(self):
+        original = self.start()
+        original.stop()
+        newer = self.start()
+        newer.stop()
+        self.tick = 13
+        self.assertEqual(original.acknowledge_stop(), 'stopped')
+        self.assertEqual((newer.poll(), newer.events), ('stop_requested', ()))
+        self.assertEqual((original.poll(), original.events), ('stopped', ()))
+        self.assertEqual(newer.acknowledge_stop(), 'stopped')
+
     def test_stop_from_dispatch_consent_callback_wins(self):
         def consent():
             if self.tick == 13:

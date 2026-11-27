@@ -45,13 +45,19 @@ class PendingSelection:
             self._state = 'cancelled'
 
     def poll(self):
-        if self._state == 'waiting' and self._clock() >= self._deadline:
+        if self._state != 'waiting':
+            return self._state
+        now = self._clock()
+        if self._state == 'waiting' and now >= self._deadline:
             consent = self._consent()
             # A callback can cancel synchronously; never overwrite its terminal state.
             if self._state != 'waiting':
                 return self._state
             if consent is not True:
                 self._state = 'stop'
+                return self._state
+            # Consent may extend the wait. Use this poll's tick, not another callback.
+            if now < self._deadline:
                 return self._state
             self.events = (('select', 'fixture:button'),)
             self._state = 'dispatched'
