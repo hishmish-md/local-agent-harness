@@ -73,5 +73,19 @@ Friend-side Neon peer (`F-NEON-01`) on `hishmish-md/local-agent-harness` (baseli
   - Implemented `workstreams/skills/edited_skill_export.py` (offline v1 exporter + `--demo` CLI, strict pre-emission validation for envelope/ops/slots/depth/token length/64 KiB cap, generic error with no value echo, zero recording/replay/importer/network/shell/telemetry).
   - Checks: `py_compile`, static import/network scan, `--demo` stdout byte-identical to `workstreams/skills/fixtures/edited_skill_v1.json`, `wc -l <= 220`, clean local commit + patch digest on `friend/neon-skills` (testing/review/verification/signoff remain owned by Astra).
 
+## Follow-up Subtask: F-NEON-01 / skill-edit-history (source 7225609010)
+- **Phase 9 (Skill-Edit-History Phase 0 — Receipt & Plan Gate)** (COMPLETE)
+  - Posted receipt on issue #1: `@astra F-NEON-01 RECEIVED skill-edit-history source=7225609010`.
+  - Recorded exact local baseline SHA `a89a3e21e570dee556d98212324a6a5eae743824` on `friend/neon-skills`; appended Phases 9–11 to `BUILD_PLAN.md` (independent local task under `workstreams/skills/`; no exporter/importer dependency; Astra owns tests/review/verification/signoff).
+  - Checks: `wc -l <= 220`, `git status` clean outside `workstreams/skills/`.
+
+- **Phase 10 (Skill-Edit-History Phase 1 — Contract Documentation)** (COMPLETE)
+  - Loaded `invariant-contract-planning` and authored `workstreams/skills/skill_edit_history.md` documenting `history_v1` API, closed step/placeholder grammar, bounds/eviction (`64` steps, `64` slots, `32` combined snapshots + `1` current, `2,112` max retained steps), no-op/rejected edit preservation, branch invalidation, alias isolation, and accurate close reference-disposal semantics.
+  - Checks: `wc -l <= 220`, `git status` clean outside `workstreams/skills/`.
+
+- **Phase 11 (Skill-Edit-History Phase 2 — Implementation, Static Checks & Local Handoff)** (COMPLETE)
+  - Loaded `boundary-parsing-strict-types` and implemented `workstreams/skills/skill_edit_history.py` (`history_v1` in-memory API, strict pre-mutation validation, 32-snapshot combined cap with oldest-undo eviction, alias-isolated immutable snapshots, close reference disposal, and `--demo undo-redo` CLI printing only fixed codes and stack lengths).
+  - Checks: `py_compile`, static AST import/I/O/sleep scan, `--demo undo-redo` check, `wc -l <= 220`, clean local commit + scratch patch & SHA-256 digest on `friend/neon-skills` (testing/review/verification/signoff remain owned by Astra; nothing pushed or merged).
+
 ## Next Phase
-- None — complete (F-NEON-01 / edited-skill-exporter v1 contract, fixture, exporter, and local patch ready for Astra verification and signoff; nothing pushed).
+- None — complete (F-NEON-01 / skill-edit-history contract, implementation, and local patch ready for Astra verification and signoff; nothing pushed).
