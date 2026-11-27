@@ -1,0 +1,68 @@
+{
+  "fixture_version": 1,
+  "replay": {
+    "synthetic": true,
+    "side_effects": "none",
+    "adapter": "in_memory_only",
+    "ordering": "Apply inputs in array order, one atomic step per tick. The first tick is 1. No wall clock, threads or random choices.",
+    "initial_state": "Each scenario starts with one authorized select on fixture:button queued, an empty event trace and an empty fake adapter ledger.",
+    "identity": "Every input and expected event inherits its scenario's run_id and action_id. callback_id identifies a logical acknowledgment, not a delivery attempt.",
+    "observations": "expected_events is the complete ordered trace of [input tick, event name] pairs. Compare the final state and counters after the last input.",
+    "counters": "dispatches counts calls to the fake adapter; ledger_entries counts accepted actions in its in-memory ledger. external_effects counts real actions, which are forbidden.",
+    "restart": "Only the simulated worker restarts. Its dispatch record and the fake ledger survive in memory; the worker cannot infer success by inspecting the test ledger."
+  },
+  "scenarios": [
+    {
+      "id": "stop-before-dispatch",
+      "run_id": "run-01",
+      "action_id": "select-01",
+      "inputs": [
+        {"op": "stop"},
+        {"op": "dispatch_if_ready"}
+      ],
+      "expected_events": [[1, "stop_accepted"], [1, "queued_action_discarded"], [1, "run_stopped"], [2, "dispatch_blocked"]],
+      "expected_final": {"run": "stopped", "action": "discarded", "dispatches": 0, "ledger_entries": 0, "external_effects": 0}
+    },
+    {
+      "id": "dispatch-before-stop",
+      "run_id": "run-02",
+      "action_id": "select-02",
+      "inputs": [
+        {"op": "dispatch_if_ready"},
+        {"op": "stop"},
+        {"op": "accept_in_fake_adapter"},
+        {"op": "deliver_ack", "callback_id": "ack-02"},
+        {"op": "dispatch_if_ready"}
+      ],
+      "expected_events": [[1, "dispatched"], [2, "stop_accepted"], [2, "action_in_flight"], [3, "fake_ledger_recorded"], [4, "action_acknowledged"], [4, "run_stopped"], [5, "dispatch_blocked"]],
+      "expected_final": {"run": "stopped", "action": "acknowledged", "dispatches": 1, "ledger_entries": 1, "external_effects": 0}
+    },
+    {
+      "id": "duplicate-callback",
+      "run_id": "run-03",
+      "action_id": "select-03",
+      "inputs": [
+        {"op": "dispatch_if_ready"},
+        {"op": "accept_in_fake_adapter"},
+        {"op": "deliver_ack", "callback_id": "ack-03"},
+        {"op": "deliver_ack", "callback_id": "ack-03"}
+      ],
+      "expected_events": [[1, "dispatched"], [2, "fake_ledger_recorded"], [3, "action_acknowledged"], [3, "run_completed"], [4, "duplicate_callback_ignored"]],
+      "expected_final": {"run": "completed", "action": "acknowledged", "dispatches": 1, "ledger_entries": 1, "external_effects": 0}
+    },
+    {
+      "id": "lost-acknowledgment",
+      "run_id": "run-04",
+      "action_id": "select-04",
+      "inputs": [
+        {"op": "dispatch_if_ready"},
+        {"op": "accept_in_fake_adapter"},
+        {"op": "drop_ack", "callback_id": "ack-04"},
+        {"op": "restart_worker"},
+        {"op": "dispatch_if_ready"}
+      ],
+      "expected_events": [[1, "dispatched"], [2, "fake_ledger_recorded"], [3, "transport_dropped_ack"], [4, "worker_restarted"], [4, "outcome_unknown"], [5, "dispatch_blocked"]],
+      "expected_final": {"run": "needs_review", "action": "unknown", "dispatches": 1, "ledger_entries": 1, "external_effects": 0}
+    }
+  ]
+}
