@@ -87,5 +87,19 @@ Friend-side Neon peer (`F-NEON-01`) on `hishmish-md/local-agent-harness` (baseli
   - Loaded `boundary-parsing-strict-types` and implemented `workstreams/skills/skill_edit_history.py` (`history_v1` in-memory API, strict pre-mutation validation, 32-snapshot combined cap with oldest-undo eviction, alias-isolated immutable snapshots, close reference disposal, and `--demo undo-redo` CLI printing only fixed codes and stack lengths).
   - Checks: `py_compile`, static AST import/I/O/sleep scan, `--demo undo-redo` check, `wc -l <= 220`, clean local commit + scratch patch & SHA-256 digest on `friend/neon-skills` (testing/review/verification/signoff remain owned by Astra; nothing pushed or merged).
 
+## Follow-up Subtask: F-NEON-01 / skill-draft-change-summary (source 7226109056)
+- **Phase 12 (Change-Summary Phase 0 — Receipt & Plan Gate)** (COMPLETE)
+  - Posted receipt on issue #1: `@astra F-NEON-01 RECEIVED skill-draft-change-summary source=7226109056`.
+  - Recorded exact local baseline SHA `3884672025b056694149ecac346bfd515479a4c6` on `friend/neon-skills`; appended Phases 12–14 to `BUILD_PLAN.md` (independent local task under `workstreams/skills/`; no history/exporter/importer dependency; Astra owns tests/review/signoff).
+  - Checks: `wc -l <= 220`, `git status` clean outside `workstreams/skills/`.
+
+- **Phase 13 (Change-Summary Phase 1 — Contract Documentation)** (COMPLETE)
+  - Authored `workstreams/skills/skill_draft_change_summary.md` documenting `change_summary_v1` closed input schema, caller-supplied scope/revision pairing, exact integer `ms` units (`0..60000` per wait, `0..300000` total wait cap), count-only semantics, fixed path-free reason codes, and `--demo net-counts`/`--demo reorder`/`--demo invalid` expectations.
+  - Checks: `wc -l <= 220`, `git status` clean outside `workstreams/skills/`.
+
+- **Phase 14 (Change-Summary Phase 2 — Implementation, Static Checks & Local Handoff)** (COMPLETE)
+  - Implemented `workstreams/skills/skill_draft_change_summary.py` (`change_summary_v1` pure in-memory count comparison, stdlib only, strict pre-result validation of both snapshots and caller-supplied scope/revision pairing, exact integer `ms` arithmetic, `300_000 ms` total-wait cap, fixed path-free reason codes, and `--demo net-counts`/`reorder`/`invalid` CLI).
+  - Checks: `py_compile`, static AST import/I/O/sleep scan, all 3 `--demo` commands, `wc -l <= 220`, clean local commit + scratch patch & SHA-256 digest on `friend/neon-skills` (testing/review/verification/signoff remain owned by Astra; nothing pushed or merged).
+
 ## Next Phase
-- None — complete (F-NEON-01 / skill-edit-history contract, implementation, and local patch ready for Astra verification and signoff; nothing pushed).
+- None — complete (F-NEON-01 / skill-draft-change-summary contract, implementation, and local patch ready for Astra verification and signoff; nothing pushed).
