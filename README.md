@@ -1,4 +1,6 @@
 # Local Agent Harness | start-to-release plan
+
+**Joining from the second PC? Start with [three copy-and-paste model prompts and GitHub setup](docs/FRIEND-PROMPTS.md).**
 This is a planning baseline, not an implemented or approved release. Start with COORDINATION.md, MODELS.md and your file in handoffs/. Workstream directories are the ownership map.
 
 ## Target and boundaries
