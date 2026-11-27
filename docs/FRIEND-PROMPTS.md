@@ -1,5 +1,7 @@
 # Your first 15 minutes: one PC, three agents
 
+**Already using Hermes?** Paste the [single PC setup prompt](FRIEND-HERMES.md) instead of doing the Git steps below.
+
 Your job is to open three separate chats, give each one its prompt below, and send their replies to Astra (the project coordinator). You do not need to build the harness or manage your friend's PC. The models do not automatically see each other's chats.
 
 ## 1. Connect your PC once

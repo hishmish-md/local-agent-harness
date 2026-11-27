@@ -1,5 +1,7 @@
 # Start here: friend seats
 
+For setup without manual Git, paste [the friend PC setup prompt](FRIEND-HERMES.md) into your existing Hermes chat.
+
 You operate three **peer seats**, not a second team with its own orchestrator. Each seat claims one ticket and reports directly to its reviewer and Astra. Sol does not dispatch Neon or OSS. Do not spawn helpers or add a seventh seat. Astra owns shared contracts and integration.
 
 | Peer | Provisional write area | First handoff |
