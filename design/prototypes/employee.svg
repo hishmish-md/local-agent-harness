@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1308" height="3644" viewBox="0 0 1308 3644" role="img" aria-labelledby="title desc">
+  <title id="title">Employee workspace</title>
+  <desc id="desc">Five desktop screens: choose a task, clarify its input, monitor progress, request a safe stop, and review the acknowledged stop.</desc>
+  <rect x="0" y="0" width="1308" height="3644" rx="0" fill="#303A3A" stroke="none" />
+  <g id="Home" transform="translate(24 24)">
+    <rect x="0" y="0" width="1260" height="700" rx="12" fill="#101416" stroke="none" />
+    <rect x="0" y="0" width="212" height="700" rx="10" fill="#192023" stroke="none" />
+    <rect x="196" y="0" width="16" height="700" rx="0" fill="#192023" stroke="none" />
+    <rect x="24" y="26" width="34" height="34" rx="8" fill="#65DBBF" stroke="none" />
+    <path d="M32 43 l6 6 12 -14" fill="none" stroke="#192023" stroke-width="3" />
+    <text x="70" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#EFF5F3">Workspace</text>
+    <text x="24" y="116" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#AFBFBA">WORKSPACE</text>
+    <rect x="12" y="134" width="188" height="42" rx="6" fill="#263A35" stroke="none" />
+    <text x="28" y="161" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#EFF5F3">Home</text>
+    <text x="28" y="209" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" fill="#EFF5F3">Task history</text>
+    <text x="24" y="665" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Employee workspace</text>
+    <text x="248" y="48" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Workspace   /   Home</text>
+    <circle cx="1092" cy="42" r="4" fill="#65DBBF" /><text x="1105" y="47" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#AFBFBA">On this device</text>
+    <rect x="212" y="72" width="1048" height="1" rx="0" fill="#384644" stroke="none" />
+    <text x="254" y="128" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#65DBBF">MY WORK</text>
+    <text x="252" y="184" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700" fill="#EFF5F3">Employee home</text>
+    <text x="254" y="220" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#AFBFBA">Choose a task to start working on this device.</text>
+    <rect x="254" y="262" width="960" height="164" rx="12" fill="#20322E" stroke="none" />
+    <text x="280" y="297" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#65DBBF">SUGGESTED TASK</text>
+    <text x="280" y="343" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#EFF5F3">Prepare a meeting summary</text>
+    <text x="280" y="384" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" fill="#AFBFBA">Turn meeting notes into a short summary and a list of next steps.</text>
+    <rect x="1050" y="320" width="127" height="42" rx="7" fill="#65DBBF" stroke="none" />
+    <text x="1068" y="347" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#101416">Start task</text>
+    <text x="254" y="485" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#EFF5F3">More tasks</text>
+    <rect x="254" y="514" width="960" height="1" rx="0" fill="#384644" stroke="none" />
+    <text x="258" y="546" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#EFF5F3">Draft an update</text>
+    <text x="258" y="570" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Write a short progress report</text>
+    <text x="1125" y="555" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#65DBBF">Open  ›</text>
+    <rect x="254" y="589" width="960" height="1" rx="0" fill="#384644" stroke="none" />
+    <text x="258" y="621" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#EFF5F3">Organize notes</text>
+    <text x="258" y="645" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Group related ideas by topic</text>
+    <text x="1125" y="630" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#65DBBF">Open  ›</text>
+  </g>
+  <g id="Clarification" transform="translate(24 748)">
+    <rect x="0" y="0" width="1260" height="700" rx="12" fill="#101416" stroke="none" />
+    <rect x="0" y="0" width="212" height="700" rx="10" fill="#192023" stroke="none" />
+    <rect x="196" y="0" width="16" height="700" rx="0" fill="#192023" stroke="none" />
+    <rect x="24" y="26" width="34" height="34" rx="8" fill="#65DBBF" stroke="none" />
+    <path d="M32 43 l6 6 12 -14" fill="none" stroke="#192023" stroke-width="3" />
+    <text x="70" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#EFF5F3">Workspace</text>
+    <text x="24" y="116" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#AFBFBA">WORKSPACE</text>
+    <rect x="12" y="134" width="188" height="42" rx="6" fill="#263A35" stroke="none" />
+    <text x="28" y="161" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#EFF5F3">Home</text>
+    <text x="28" y="209" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" fill="#EFF5F3">Task history</text>
+    <text x="24" y="665" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Employee workspace</text>
+    <text x="248" y="48" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Workspace   /   Home   /   Task details</text>
+    <circle cx="1092" cy="42" r="4" fill="#65DBBF" /><text x="1105" y="47" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#AFBFBA">On this device</text>
+    <rect x="212" y="72" width="1048" height="1" rx="0" fill="#384644" stroke="none" />
+    <text x="254" y="128" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#65DBBF">TASK DETAILS</text>
+    <text x="252" y="184" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700" fill="#EFF5F3">Prepare a meeting summary</text>
+    <text x="254" y="222" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#AFBFBA">Two documents match “meeting notes.” Choose one before the task starts.</text>
+    <g id="Choose-meeting-notes">
+      <rect x="254" y="260" width="568" height="354" rx="10" fill="#192023" stroke="#384644" />
+      <text x="280" y="303" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="#EFF5F3">Which notes should I use?</text>
+      <g id="Planning-option">
+        <rect x="280" y="328" width="516" height="70" rx="6" fill="#101416" stroke="#384644" />
+        <circle cx="304" cy="363" r="9" fill="#192023" stroke="#AFBFBA" stroke-width="2" />
+        <text x="329" y="356" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#EFF5F3">Planning meeting notes</text>
+        <text x="329" y="380" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Planning folder · Text document</text>
+      </g>
+      <g id="Review-option">
+        <rect x="280" y="412" width="516" height="70" rx="6" fill="#101416" stroke="#384644" />
+        <circle cx="304" cy="447" r="9" fill="#192023" stroke="#AFBFBA" stroke-width="2" />
+        <text x="329" y="440" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#EFF5F3">Review meeting notes</text>
+        <text x="329" y="464" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Review folder · Text document</text>
+      </g>
+      <rect x="280" y="514" width="118" height="42" rx="7" fill="#303A3A" stroke="none" />
+      <text x="300" y="541" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#AFBFBA">Continue</text>
+    </g>
+    <g id="Clarification-status">
+      <rect x="850" y="260" width="364" height="354" rx="10" fill="#192023" stroke="none" />
+      <text x="878" y="300" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#65DBBF">RUN STATUS</text>
+      <text x="878" y="348" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="700" fill="#EFF5F3">Waiting for you</text>
+      <text x="878" y="388" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" fill="#AFBFBA">No notes have been opened.</text>
+      <rect x="878" y="419" width="304" height="1" rx="0" fill="#384644" stroke="none" />
+      <rect x="878" y="452" width="153" height="44" rx="7" fill="#192023" stroke="#FFA89A" />
+      <rect x="895" y="468" width="12" height="12" rx="2" fill="#FFA89A" />
+      <text x="921" y="480" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#FFA89A">Stop task</text>
+    </g>
+  </g>
+  <g id="Running" transform="translate(24 1472)">
+    <rect x="0" y="0" width="1260" height="700" rx="12" fill="#101416" stroke="none" />
+    <rect x="0" y="0" width="212" height="700" rx="10" fill="#192023" stroke="none" />
+    <rect x="196" y="0" width="16" height="700" rx="0" fill="#192023" stroke="none" />
+    <rect x="24" y="26" width="34" height="34" rx="8" fill="#65DBBF" stroke="none" />
+    <path d="M32 43 l6 6 12 -14" fill="none" stroke="#192023" stroke-width="3" />
+    <text x="70" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#EFF5F3">Workspace</text>
+    <text x="24" y="116" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#AFBFBA">WORKSPACE</text>
+    <rect x="12" y="134" width="188" height="42" rx="6" fill="#263A35" stroke="none" />
+    <text x="28" y="161" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#EFF5F3">Home</text>
+    <text x="28" y="209" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" fill="#EFF5F3">Task history</text>
+    <text x="24" y="665" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Employee workspace</text>
+    <text x="248" y="48" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Workspace   /   Home   /   Task details</text>
+    <circle cx="1092" cy="42" r="4" fill="#65DBBF" /><text x="1105" y="47" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#AFBFBA">On this device</text>
+    <rect x="212" y="72" width="1048" height="1" rx="0" fill="#384644" stroke="none" />
+    <text x="254" y="128" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#65DBBF">TASK DETAILS</text>
+    <text x="252" y="184" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700" fill="#EFF5F3">Prepare a meeting summary</text>
+    <text x="254" y="222" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#AFBFBA">Creating a summary from your meeting notes.</text>
+    <rect x="254" y="260" width="568" height="354" rx="10" fill="#192023" stroke="#384644" />
+    <text x="280" y="303" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="#EFF5F3">Task progress</text>
+    <rect x="280" y="328" width="514" height="1" rx="0" fill="#384644" stroke="none" />
+    <rect x="280" y="348" width="33" height="33" rx="16" fill="#20322E" stroke="none" />
+    <text x="292" y="371" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#65DBBF">1</text>
+    <text x="331" y="369" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#EFF5F3">Read meeting notes</text>
+    <text x="331" y="395" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Complete</text>
+    <rect x="280" y="430" width="33" height="33" rx="16" fill="#20322E" stroke="none" />
+    <text x="292" y="453" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#65DBBF">2</text>
+    <text x="331" y="451" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#EFF5F3">Draft summary</text>
+    <text x="331" y="477" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">In progress</text>
+    <rect x="280" y="512" width="33" height="33" rx="16" fill="#303A3A" stroke="none" />
+    <text x="292" y="535" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#65DBBF">3</text>
+    <text x="331" y="533" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#EFF5F3">List next steps</text>
+    <text x="331" y="559" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Waiting</text>
+    <rect x="850" y="260" width="364" height="354" rx="10" fill="#192023" stroke="none" />
+    <text x="878" y="300" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#65DBBF">RUN STATUS</text>
+    <text x="878" y="348" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="700" fill="#EFF5F3">Running</text>
+    <text x="878" y="389" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" fill="#AFBFBA">Working on step 2 of 3.</text>
+    <rect x="878" y="419" width="304" height="1" rx="0" fill="#384644" stroke="none" />
+    <rect x="878" y="452" width="153" height="44" rx="7" fill="#192023" stroke="#FFA89A" />
+      <rect x="895" y="468" width="12" height="12" rx="2" fill="#FFA89A" />
+    <text x="921" y="480" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#FFA89A">Stop task</text>
+  </g>
+  <g id="Stop-requested" transform="translate(24 2196)">
+    <rect x="0" y="0" width="1260" height="700" rx="12" fill="#101416" stroke="none" />
+    <rect x="0" y="0" width="212" height="700" rx="10" fill="#192023" stroke="none" />
+    <rect x="196" y="0" width="16" height="700" rx="0" fill="#192023" stroke="none" />
+    <rect x="24" y="26" width="34" height="34" rx="8" fill="#65DBBF" stroke="none" />
+    <path d="M32 43 l6 6 12 -14" fill="none" stroke="#192023" stroke-width="3" />
+    <text x="70" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#EFF5F3">Workspace</text>
+    <text x="24" y="116" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#AFBFBA">WORKSPACE</text>
+    <rect x="12" y="134" width="188" height="42" rx="6" fill="#263A35" stroke="none" />
+    <text x="28" y="161" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#EFF5F3">Home</text>
+    <text x="28" y="209" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" fill="#EFF5F3">Task history</text>
+    <text x="24" y="665" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Employee workspace</text>
+    <text x="248" y="48" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Workspace   /   Home   /   Task details</text>
+    <circle cx="1092" cy="42" r="4" fill="#65DBBF" /><text x="1105" y="47" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#AFBFBA">On this device</text>
+    <rect x="212" y="72" width="1048" height="1" rx="0" fill="#384644" stroke="none" />
+    <text x="254" y="128" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#65DBBF">TASK DETAILS</text>
+    <text x="252" y="184" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700" fill="#EFF5F3">Prepare a meeting summary</text>
+    <text x="254" y="222" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#AFBFBA">Queued steps were blocked as soon as you clicked Stop task.</text>
+    <rect x="254" y="260" width="568" height="354" rx="10" fill="#192023" stroke="#384644" />
+    <text x="280" y="303" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="#EFF5F3">Task progress</text>
+    <rect x="280" y="328" width="514" height="1" rx="0" fill="#384644" stroke="none" />
+    <rect x="280" y="348" width="33" height="33" rx="16" fill="#20322E" stroke="none" />
+    <text x="292" y="371" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#65DBBF">1</text>
+    <text x="331" y="369" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#EFF5F3">Read meeting notes</text>
+    <text x="331" y="395" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Complete</text>
+    <rect x="280" y="430" width="33" height="33" rx="16" fill="#20322E" stroke="none" />
+    <text x="292" y="453" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#65DBBF">2</text>
+    <text x="331" y="451" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#EFF5F3">Draft summary</text>
+    <text x="331" y="477" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Already in progress when you stopped</text>
+    <rect x="280" y="512" width="33" height="33" rx="16" fill="#303A3A" stroke="none" />
+    <text x="292" y="535" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#65DBBF">3</text>
+    <text x="331" y="533" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#EFF5F3">List next steps</text>
+    <text x="331" y="559" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#FFA89A">Blocked · Will not start</text>
+    <rect x="850" y="260" width="364" height="354" rx="10" fill="#192023" stroke="none" />
+    <text x="878" y="300" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#65DBBF">RUN STATUS</text>
+    <text x="878" y="348" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="700" fill="#FFA89A">Stop requested</text>
+    <text x="878" y="389" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" fill="#AFBFBA">Waiting for the task to acknowledge</text>
+    <rect x="878" y="438" width="304" height="1" rx="0" fill="#384644" stroke="none" />
+    <text x="878" y="411" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" fill="#AFBFBA">the stop request.</text>
+    <text x="878" y="475" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" fill="#AFBFBA">The step already in progress</text>
+    <text x="878" y="500" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" fill="#AFBFBA">may still finish.</text>
+  </g>
+  <g id="Stopped" transform="translate(24 2920)">
+    <rect x="0" y="0" width="1260" height="700" rx="12" fill="#101416" stroke="none" />
+    <rect x="0" y="0" width="212" height="700" rx="10" fill="#192023" stroke="none" />
+    <rect x="196" y="0" width="16" height="700" rx="0" fill="#192023" stroke="none" />
+    <rect x="24" y="26" width="34" height="34" rx="8" fill="#65DBBF" stroke="none" />
+    <path d="M32 43 l6 6 12 -14" fill="none" stroke="#192023" stroke-width="3" />
+    <text x="70" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#EFF5F3">Workspace</text>
+    <text x="24" y="116" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#AFBFBA">WORKSPACE</text>
+    <rect x="12" y="134" width="188" height="42" rx="6" fill="#263A35" stroke="none" />
+    <text x="28" y="161" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#EFF5F3">Home</text>
+    <text x="28" y="209" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" fill="#EFF5F3">Task history</text>
+    <text x="24" y="665" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Employee workspace</text>
+    <text x="248" y="48" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Workspace   /   Home   /   Task details</text>
+    <circle cx="1092" cy="42" r="4" fill="#65DBBF" /><text x="1105" y="47" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#AFBFBA">On this device</text>
+    <rect x="212" y="72" width="1048" height="1" rx="0" fill="#384644" stroke="none" />
+    <text x="254" y="128" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#65DBBF">TASK DETAILS</text>
+    <text x="252" y="184" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700" fill="#EFF5F3">Prepare a meeting summary</text>
+    <text x="254" y="222" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" fill="#AFBFBA">The task has stopped. No queued steps were started.</text>
+    <rect x="254" y="260" width="568" height="354" rx="10" fill="#192023" stroke="#384644" />
+    <text x="280" y="303" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="#EFF5F3">Task progress</text>
+    <rect x="280" y="328" width="514" height="1" rx="0" fill="#384644" stroke="none" />
+    <rect x="280" y="348" width="33" height="33" rx="16" fill="#20322E" stroke="none" />
+    <text x="292" y="371" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#65DBBF">1</text>
+    <text x="331" y="369" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#EFF5F3">Read meeting notes</text>
+    <text x="331" y="395" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Complete</text>
+    <rect x="280" y="430" width="33" height="33" rx="16" fill="#20322E" stroke="none" />
+    <text x="292" y="453" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#65DBBF">2</text>
+    <text x="331" y="451" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#EFF5F3">Draft summary</text>
+    <text x="331" y="477" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#AFBFBA">Finished before the task stopped</text>
+    <rect x="280" y="512" width="33" height="33" rx="16" fill="#303A3A" stroke="none" />
+    <text x="292" y="535" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#65DBBF">3</text>
+    <text x="331" y="533" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#EFF5F3">List next steps</text>
+    <text x="331" y="559" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" fill="#FFA89A">Blocked · Did not start</text>
+    <rect x="850" y="260" width="364" height="354" rx="10" fill="#192023" stroke="none" />
+    <text x="878" y="300" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1.2" font-size="14" font-weight="700" fill="#65DBBF">RUN STATUS</text>
+    <text x="878" y="348" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="700" fill="#EFF5F3">Stopped</text>
+    <text x="878" y="389" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" fill="#AFBFBA">The task acknowledged your request.</text>
+    <rect x="878" y="419" width="304" height="1" rx="0" fill="#384644" stroke="none" />
+    <rect x="878" y="452" width="153" height="42" rx="7" fill="#65DBBF" stroke="none" />
+    <text x="896" y="479" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#101416">Back to home</text>
+  </g>
+</svg>

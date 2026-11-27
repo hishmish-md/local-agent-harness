@@ -3,6 +3,8 @@
 **Joining from the second PC? Paste [one setup prompt into Hermes](docs/FRIEND-HERMES.md); no manual Git required.** [Manual alternative for the two friend peers](docs/FRIEND-PROMPTS.md).
 This is a planning baseline, not an implemented or approved release. [Coordination](COORDINATION.md) maps the six workstreams to four seats: owner Astra (main coordinator), owner Gemini Neon High, and friend Sol and friend Neon as peers. Start with your linked handoff there; [model labels](MODELS.md) are not readiness claims.
 
+[Dark UI prototypes and integration contract](docs/UI-INDEX.md) — employee, admin, and record/replay boards.
+
 ## Target and boundaries
 A local employee chat sends a goal over an access-controlled OS pipe to a policy broker. An embedded inference library reads pinned Gemma E2B weights from disk; there is no HTTP model server. The broker alone may execute schema-validated, allowlisted actions in a disposable headless guest with no network adapter, shared clipboard, host drives or employee desktop control. Browser fixtures load from local files; native app fixtures run inside the same guest. No remote websites, update checks, telemetry, license phone-home or localhost TCP services. Ship dependencies and signed model manifests on offline media; fail closed if unavailable. An enterprise workflow requiring a network is out of scope.
 

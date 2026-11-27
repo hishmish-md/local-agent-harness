@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Local harness — Runtime settings</title>
+  <desc id="desc">Local-only configuration draft. Select installed model weights to enable Apply. No preview has run.</desc>
+  <rect x="0" y="0" width="1200" height="780" rx="0" fill="#101416" stroke="none" />
+  <g id="Application-header">
+    <rect x="0" y="0" width="1200" height="64" rx="0" fill="#192023" stroke="none" />
+    <rect x="0" y="63" width="1200" height="1" rx="0" fill="#374440" stroke="none" />
+    <rect x="32" y="18" width="28" height="28" rx="6" fill="#65DBBF" stroke="none" />
+    <path d="M38 26l6 6-6 6m9 0h7" fill="none" stroke="#192023" stroke-width="2" />
+    <text x="72" y="39" fill="#EFF5F3" font-family="Segoe UI" font-size="20" font-weight="650">Local harness</text>
+    <text x="224" y="38" fill="#AFBFBA" font-family="Segoe UI" font-size="15" font-weight="400">/   Administration</text>
+    <rect x="1041" y="18" width="126" height="29" rx="14" fill="#253934" stroke="none" />
+    <circle cx="1058" cy="32" r="4" fill="#65DBBF" />
+    <text x="1070" y="37" fill="#65DBBF" font-family="Segoe UI" font-size="14" font-weight="600">Local only</text>
+  </g>
+  <g id="Page-heading">
+    <text x="64" y="119" fill="#65DBBF" font-family="Consolas" font-size="12" font-weight="650">WORKSPACE  /  CONFIGURATION</text>
+    <text x="62" y="170" fill="#EFF5F3" font-family="Segoe UI" font-size="42" font-weight="650">Runtime settings</text>
+    <text x="65" y="201" fill="#AFBFBA" font-family="Segoe UI" font-size="17" font-weight="400">Configure on-device inference and test a draft before applying it.</text>
+  </g>
+  <g id="Configuration-panel">
+    <rect x="64" y="238" width="670" height="486" rx="12" fill="#192023" stroke="#40514C" />
+    <text x="92" y="294" fill="#EFF5F3" font-family="Segoe UI" font-size="26" font-weight="650">Runtime configuration</text>
+    <rect x="92" y="308" width="614" height="1" rx="0" fill="#374440" stroke="none" />
+    <text x="92" y="262" font-size="12" font-family="Consolas" fill="#65DBBF">01 / CONFIGURE</text>
+  </g>
+  <g id="Local-model">
+    <text x="92" y="347" fill="#EFF5F3" font-family="Segoe UI" font-size="18" font-weight="600">Local model</text>
+    <text x="92" y="375" fill="#AFBFBA" font-family="Segoe UI" font-size="14" font-weight="400">Choose weights installed on this device.</text>
+    <rect x="450" y="327" width="256" height="47" rx="6" fill="#101416" stroke="#65DBBF" stroke-width="2" />
+    <text x="464" y="356" fill="#EFF5F3" font-family="Segoe UI" font-size="15" font-weight="400">Choose a local model</text>
+    <path d="M680 347l5 5 5-5" stroke="#AFBFBA" fill="none" stroke-width="2" />
+    <rect x="92" y="412" width="614" height="1" rx="0" fill="#374440" stroke="none" />
+  </g>
+  <g id="Context-window">
+    <text x="92" y="462" fill="#EFF5F3" font-family="Segoe UI" font-size="18" font-weight="600">Context window</text>
+    <text x="92" y="490" fill="#AFBFBA" font-family="Segoe UI" font-size="14" font-weight="400">Maximum tokens per request.</text>
+    <rect x="450" y="442" width="256" height="47" rx="6" fill="#101416" stroke="#75867F" />
+    <text x="464" y="471" fill="#EFF5F3" font-family="Segoe UI" font-size="15" font-weight="400">8,192 tokens</text>
+    <path d="M680 462l5 5 5-5" stroke="#AFBFBA" fill="none" stroke-width="2" />
+    <rect x="92" y="527" width="614" height="1" rx="0" fill="#374440" stroke="none" />
+  </g>
+  <g id="Optional-vision">
+    <text x="92" y="577" fill="#EFF5F3" font-family="Segoe UI" font-size="18" font-weight="600">Vision input</text>
+    <text x="92" y="605" fill="#AFBFBA" font-family="Segoe UI" font-size="14" font-weight="400">Allow images when the local model supports them.</text>
+    <text x="612" y="588" fill="#AFBFBA" font-family="Segoe UI" font-size="14" font-weight="400">Off</text>
+    <rect x="652" y="569" width="54" height="28" rx="14" fill="#485954" stroke="none" />
+    <circle cx="667" cy="583" r="10" fill="#AFBFBA" />
+    <rect x="92" y="638" width="614" height="1" rx="0" fill="#374440" stroke="none" />
+    <text x="92" y="688" fill="#AFBFBA" font-family="Segoe UI" font-size="14" font-weight="400">Select a model to apply settings.</text>
+    <rect x="554" y="658" width="152" height="44" rx="6" fill="#2C3638" stroke="none" />
+    <text x="579" y="686" fill="#AFBFBA" font-family="Segoe UI" font-size="15" font-weight="600">Apply settings</text>
+  </g>
+  <g id="Isolated-preview">
+    <rect x="758" y="238" width="378" height="486" rx="12" fill="#192023" stroke="#40514C" />
+    <text x="784" y="278" fill="#AFBFBA" font-family="Consolas" font-size="12" font-weight="650">02 / TEST DRAFT</text>
+    <text x="784" y="319" fill="#EFF5F3" font-family="Segoe UI" font-size="26" font-weight="650">Isolated preview</text>
+    <text x="784" y="349" fill="#AFBFBA" font-family="Segoe UI" font-size="15" font-weight="400">Run a prompt on this device without changing</text>
+    <text x="784" y="371" fill="#AFBFBA" font-family="Segoe UI" font-size="15" font-weight="400">the active workspace.</text>
+    <rect x="784" y="394" width="326" height="1" rx="0" fill="#374440" stroke="none" />
+    <text x="784" y="429" fill="#EFF5F3" font-family="Segoe UI" font-size="15" font-weight="600">Test prompt</text>
+    <rect x="784" y="444" width="326" height="80" rx="6" fill="#101416" stroke="#75867F" />
+    <text x="798" y="474" fill="#AFBFBA" font-family="Segoe UI" font-size="15" font-weight="400">Enter a test message…</text>
+    <rect x="784" y="542" width="326" height="43" rx="6" fill="#2C3638" stroke="none" />
+    <text x="947" y="569" fill="#AFBFBA" font-family="Segoe UI" font-size="15" font-weight="600" text-anchor="middle">Run local preview</text>
+    <text x="784" y="625" fill="#65DBBF" font-family="Consolas" font-size="12" font-weight="650">OUTPUT</text>
+    <text x="784" y="656" fill="#EFF5F3" font-family="Segoe UI" font-size="17" font-weight="600">No run yet</text>
+    <text x="784" y="683" fill="#AFBFBA" font-family="Segoe UI" font-size="14" font-weight="400">Choose a model and enter a test prompt.</text>
+  </g>
+</svg>
