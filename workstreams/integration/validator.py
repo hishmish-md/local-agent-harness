@@ -29,6 +29,11 @@ class PendingSelection:
         if decision != 'allow':
             self._state = decision
 
+    @property
+    def status(self):
+        """Observe without polling, even when a zero-tick wait is due."""
+        return self._state
+
     def edit_wait(self, ticks):
         if type(ticks) is not int or ticks < 0:
             raise ValueError('wait must be a nonnegative integer')
@@ -51,3 +56,44 @@ class PendingSelection:
             self.events = (('select', 'fixture:button'),)
             self._state = 'dispatched'
         return self._state
+
+
+class SelectionRun:
+    """App view of one synthetic selection; stop acknowledgment is a separate input."""
+
+    def __init__(self, pending):
+        self._pending = pending
+        self._stop_acknowledged = False
+
+    @property
+    def status(self):
+        state = self._pending.status
+        if state == 'cancelled':
+            return 'stopped' if self._stop_acknowledged else 'stop_requested'
+        return state
+
+    @property
+    def events(self):
+        return self._pending.events
+
+    def poll(self):
+        self._pending.poll()
+        return self.status
+
+    def edit_wait(self, ticks):
+        self._pending.edit_wait(ticks)
+        return self.status
+
+    def stop(self):
+        self._pending.cancel()
+        return self.status
+
+    def acknowledge_stop(self):
+        if self.status == 'stop_requested':
+            self._stop_acknowledged = True
+        return self.status
+
+
+def start_selection(action, candidates, consent, *, clock, wait):
+    """Start a fresh run without dispatching. Only poll() can advance a wait."""
+    return SelectionRun(PendingSelection(action, candidates, consent, clock=clock, wait=wait))
