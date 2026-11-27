@@ -121,10 +121,10 @@ def summarize_draft_change(
     if expected_before_rev >= expected_after_rev:
         return _reject("invalid_revision")
     b_res = _validate_snapshot(before)
-    if type(b_res) is str:
+    if isinstance(b_res, str):
         return _reject(b_res)
     a_res = _validate_snapshot(after)
-    if type(a_res) is str:
+    if isinstance(a_res, str):
         return _reject(a_res)
     b_scope, b_rev, b_steps, b_wait = b_res
     a_scope, a_rev, a_steps, a_wait = a_res
