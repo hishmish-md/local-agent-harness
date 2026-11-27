@@ -4,4 +4,4 @@
 
 **Follow-up, only after a new claim:** `O-NEON-02` · `workstreams/inference/`. Specify embedded Gemma loading, bounded context and typed action proposals. Supply invalid-action, missing-weight and overflow cases: each must stop locally without side effects or a network fallback. Give Astra the runtime contract for review and friend Sol the fixtures for independent reproduction on the reference PC. Without that PC, record **not run**.
 
-Report to Astra; keep each ticket on its own branch and within its own paths. Do not delegate to another model. Use the [handoff evidence checklist](../COORDINATION.md).
+Report to Astra; keep each ticket on its own branch and within its own paths. Owner-side `/swarm` is permitted for bounded synthetic subtasks under the same ticket; check each worker's result and do not pass it separate credentials or publish privileges. Use the [handoff evidence checklist](../COORDINATION.md).

@@ -1,6 +1,8 @@
 # Four-seat operating agreement
 
-Astra is the main coordinator and integration owner. Owner Gemini Neon High works with Astra on the owner PC. Friend Sol and friend Neon are peers: each accepts or declines its own ticket and reports to Astra and its reviewer. Neither dispatches the other. Hermes on the friend PC prepares workspaces; it is not a seat. Only these four seats take tickets. If a seat is unavailable, pause its ticket or have Astra explicitly reassign it to another existing seat. Do not spawn helpers or substitute models.
+Astra is the main coordinator and integration owner. Owner Gemini Neon High works with Astra on the owner PC. Friend Sol and friend Neon are peers: each accepts or declines its own ticket and reports to Astra and its reviewer. Neither dispatches the other. Hermes on the friend PC prepares workspaces; it is not a seat. Only these four seats take tickets. If a seat is unavailable, pause its ticket or have Astra explicitly reassign it to another existing seat. Do not substitute models. On the owner side only, Gemini Neon High may use `/swarm` for bounded synthetic subtasks within its ticket. Workers share a board, receive no separate lanes or credentials, and cannot publish or sign off reviews; Neon remains accountable. Friend seats do not spawn helpers.
+
+Before the first implementation ticket, Sol and friend Neon each return an independently reviewed synthetic calibration covering a delayed step, a malformed action, and consent withdrawn before dispatch. Mark missing evidence not run; do not wait on an inactive model.
 
 ## Assignments and review routing
 
